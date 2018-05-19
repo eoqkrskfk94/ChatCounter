@@ -37,14 +37,19 @@ public class DataReader {
 	private ArrayList<String> readFiles(File[] dataDir){
 
 		ArrayList<String> message = new ArrayList<String>();
-
-		// some logics that read files must be here
+		CSVReader readcsv = new CSVReader();
+		TXTReader readtxt = new TXTReader();
+		
+		// some logics that read files must be here/
 		for(File file:dataDir) {
 			if(file.toString().endsWith(".txt")) {
 				System.out.println("txtfile: " + file.getName());
+				readtxt.reader(file.getAbsolutePath());
 			}
+			
 			if(file.toString().endsWith(".csv")) {
 				System.out.println("csvfile: " + file.getName());
+				//readcsv.reader(file.getAbsolutePath());
 			}
 		}
 
