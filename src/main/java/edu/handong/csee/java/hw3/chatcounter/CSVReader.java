@@ -1,13 +1,18 @@
 package edu.handong.csee.java.hw3.chatcounter;
 import java.io.File;
 import java.io.FileNotFoundException;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Scanner;
 
 public class CSVReader {
 	
+	private List names = new ArrayList();
+	
 	public void reader(String file) {
 		
 		String fileName = file;
+		int i = 0;
 		
 		try {
 			Scanner input = new Scanner(new File(fileName));
@@ -19,6 +24,9 @@ public class CSVReader {
 				
 				array[1] = array[1].replaceAll("\"", "");
 				System.out.println(array[1]);
+				names.add(array[1]);
+				
+				i++;
 				
 			}
 			
