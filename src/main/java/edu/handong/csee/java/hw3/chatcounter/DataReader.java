@@ -1,0 +1,56 @@
+package edu.handong.csee.java.hw3.chatcounter;
+import java.io.File;
+import java.util.ArrayList;
+
+public class DataReader {
+
+
+	public ArrayList<String> getData(String strDir){
+
+		File myDir = getDirectory(strDir);
+
+		File[] files = getListOfFilesFromDirectory(myDir);
+
+		ArrayList<String> message = readFiles(files);
+
+		System.out.println("hello" + message);
+		return message;
+
+
+	}
+
+	private File getDirectory(String Directory) {
+
+		File myDirectory = new File(Directory);
+
+		return myDirectory;
+	}
+
+	private File[] getListOfFilesFromDirectory(File dataDir) {
+
+		for(File file:dataDir.listFiles()) {
+			System.out.println(file.getAbsolutePath());
+		}
+		return dataDir.listFiles();
+	}
+
+	private ArrayList<String> readFiles(File[] dataDir){
+
+		ArrayList<String> message = new ArrayList<String>();
+
+		// some logics that read files must be here
+		for(File file:dataDir) {
+			if(file.toString().endsWith(".txt")) {
+				System.out.println("txtfile: " + file.getName());
+			}
+			if(file.toString().endsWith(".csv")) {
+				System.out.println("csvfile: " + file.getName());
+			}
+		}
+
+		return message;
+	}
+
+}
+
+
