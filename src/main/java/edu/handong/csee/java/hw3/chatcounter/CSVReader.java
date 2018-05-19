@@ -2,12 +2,11 @@ package edu.handong.csee.java.hw3.chatcounter;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.ArrayList;
-import java.util.List;
 import java.util.Scanner;
 
 public class CSVReader {
 	
-	private List names = new ArrayList();
+	private static ArrayList<String> names = new ArrayList<String>();
 	
 	public void reader(String file) {
 		
@@ -23,9 +22,7 @@ public class CSVReader {
 				String[] array = line.split(",");
 				
 				array[1] = array[1].replaceAll("\"", "");
-				System.out.println(array[1]);
 				names.add(array[1]);
-				
 				i++;
 				
 			}
@@ -36,5 +33,9 @@ public class CSVReader {
 		}
 		
 		
+	}
+	
+	public ArrayList<String> getStringList(){
+		return names;
 	}
 }

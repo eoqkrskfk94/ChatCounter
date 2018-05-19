@@ -3,6 +3,8 @@ import java.io.File;
 import java.util.ArrayList;
 
 public class DataReader {
+	
+	ChatMessageCounter counter = new ChatMessageCounter();
 
 
 	public ArrayList<String> getData(String strDir){
@@ -45,11 +47,13 @@ public class DataReader {
 			if(file.toString().endsWith(".txt")) {
 				System.out.println("txtfile: " + file.getName());
 				readtxt.reader(file.getAbsolutePath());
+				counter.mergeChatNamestxt();
 			}
 			
 			if(file.toString().endsWith(".csv")) {
 				System.out.println("csvfile: " + file.getName());
-				//readcsv.reader(file.getAbsolutePath());
+				readcsv.reader(file.getAbsolutePath());
+				counter.mergeChatNamescvs();
 			}
 		}
 

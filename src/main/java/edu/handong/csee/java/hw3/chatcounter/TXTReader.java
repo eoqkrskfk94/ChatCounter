@@ -2,12 +2,11 @@ package edu.handong.csee.java.hw3.chatcounter;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.ArrayList;
-import java.util.List;
 import java.util.Scanner;
 
 public class TXTReader {
 	
-	private List names = new ArrayList();
+	private static ArrayList<String> names = new ArrayList<String>();
 
 	public void reader(String file) {
 
@@ -27,7 +26,7 @@ public class TXTReader {
 				if(array[0].startsWith("[") && array[0].endsWith("]")) {
 					array[0] = array[0].replaceAll("[\\[\\]]", "");
 					names.add(array[0]);
-					System.out.println(names.get(i++));
+					//System.out.println(names.get(i++));
 				}
 				
 
@@ -40,5 +39,9 @@ public class TXTReader {
 
 
 
+	}
+	
+	public ArrayList<String> getStringList() {
+		return names;
 	}
 }
