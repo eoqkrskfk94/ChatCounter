@@ -11,7 +11,6 @@ public class CSVReader {
 	public void reader(String file) {
 		
 		String fileName = file;
-		int i = 0;
 		
 		try {
 			names.clear();
@@ -22,9 +21,11 @@ public class CSVReader {
 				
 				String[] array = line.split(",");
 				
-				array[1] = array[1].replaceAll("\"", "");
-				names.add(array[1]);
-				i++;
+				if(array[1].length() < 20 && array[1].startsWith("\"")) {
+					array[1] = array[1].replaceAll("\"", "");
+					names.add(array[1]);
+				}
+					
 				
 			}
 			

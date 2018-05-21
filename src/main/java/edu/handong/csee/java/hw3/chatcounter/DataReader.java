@@ -5,21 +5,20 @@ import java.util.ArrayList;
 public class DataReader {
 	int i = 0;
 	
-	ChatMessageCounter counter = new ChatMessageCounter();
+	ChatListMerger counter = new ChatListMerger();
 
 
-	public ArrayList<String> getData(String strDir){
+	public void getData(String strDir){
 
 		File myDir = getDirectory(strDir);
 
 		File[] files = getListOfFilesFromDirectory(myDir);
 
-		ArrayList<String> message = readFiles(files);
-
-		System.out.println("hello" + message);
-		return message;
+		readFiles(files);
 
 
+		
+		//return message;
 	}
 
 	private File getDirectory(String Directory) {
@@ -37,7 +36,7 @@ public class DataReader {
 		return dataDir.listFiles();
 	}
 
-	private ArrayList<String> readFiles(File[] dataDir){
+	private void readFiles(File[] dataDir){
 
 		ArrayList<String> message = new ArrayList<String>();
 		CSVReader readcsv = new CSVReader();
@@ -55,11 +54,10 @@ public class DataReader {
 				System.out.println("csvfile: " + file.getName());
 				readcsv.reader(file.getAbsolutePath());
 				counter.mergeChatNamescvs();
-				//System.out.println(i++);
 			}
 		}
 
-		return message;
+		//return message;
 	}
 
 }

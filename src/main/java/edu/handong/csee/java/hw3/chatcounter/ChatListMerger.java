@@ -1,18 +1,19 @@
 package edu.handong.csee.java.hw3.chatcounter;
-import java.util.ArrayList;
 
-public class ChatMessageCounter {
+public class ChatListMerger {
 	CSVReader csv = new CSVReader();
 	TXTReader txt = new TXTReader();
-	FullArrayCarry all = new FullArrayCarry();
+	FullArrayCarrier full_list = new FullArrayCarrier();
 	int i = 0;
 	
 	
 	public void mergeChatNamestxt() {
-		all.getStringList().addAll(txt.getStringList());
+		full_list.getStringList().addAll(txt.getStringList());
 	}
 	
 	public void mergeChatNamescvs() {
-		all.getStringList().addAll(csv.getStringList());
+		full_list.getStringList().addAll(csv.getStringList());
 	}
+	
+	
 }

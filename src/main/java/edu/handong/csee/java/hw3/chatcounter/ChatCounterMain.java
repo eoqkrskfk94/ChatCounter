@@ -1,13 +1,13 @@
 package edu.handong.csee.java.hw3.chatcounter;
 import java.util.ArrayList;
-import java.util.List;
 
 public class ChatCounterMain {
 
 	public static void main(String[] args) {
 
 		DataReader dataReader = new DataReader();
-		FullArrayCarry full = new FullArrayCarry();
+		FullArrayCarrier full = new FullArrayCarrier();
+		ChatUserCounter counter = new ChatUserCounter();
 
 		try {
 			dataReader.getData(args[0]);
@@ -20,8 +20,9 @@ public class ChatCounterMain {
 		for(int i = 0; i < mArrayList.size(); i++) {
             System.out.println("one index " + i + " : value " + mArrayList.get(i));
         }
+		
 
-
+		counter.Counter();
 		
 	}
 
