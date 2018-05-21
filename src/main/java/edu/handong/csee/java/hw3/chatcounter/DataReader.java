@@ -3,6 +3,7 @@ import java.io.File;
 import java.util.ArrayList;
 
 public class DataReader {
+	int i = 0;
 	
 	ChatMessageCounter counter = new ChatMessageCounter();
 
@@ -54,6 +55,7 @@ public class DataReader {
 				System.out.println("csvfile: " + file.getName());
 				readcsv.reader(file.getAbsolutePath());
 				counter.mergeChatNamescvs();
+				//System.out.println(i++);
 			}
 		}
 

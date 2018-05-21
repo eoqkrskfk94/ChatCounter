@@ -5,6 +5,7 @@ public class ChatMessageCounter {
 	CSVReader csv = new CSVReader();
 	TXTReader txt = new TXTReader();
 	FullArrayCarry all = new FullArrayCarry();
+	int i = 0;
 	
 	
 	public void mergeChatNamestxt() {

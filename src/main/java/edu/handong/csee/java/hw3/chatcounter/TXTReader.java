@@ -14,6 +14,7 @@ public class TXTReader {
 		int i = 0;
 
 		try {
+			names.clear();
 			Scanner input = new Scanner(new File(fileName));
 			String line = input.nextLine();
 			line = input.nextLine();
