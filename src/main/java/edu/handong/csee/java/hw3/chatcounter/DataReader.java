@@ -1,6 +1,5 @@
 package edu.handong.csee.java.hw3.chatcounter;
 import java.io.File;
-import java.util.ArrayList;
 
 public class DataReader {
 	int i = 0;
@@ -15,15 +14,11 @@ public class DataReader {
 		File[] files = getListOfFilesFromDirectory(myDir);
 
 		readFiles(files);
-
-
-		
-		//return message;
 	}
 
-	private File getDirectory(String Directory) {
+	private File getDirectory(String directory) {
 
-		File myDirectory = new File(Directory);
+		File myDirectory = new File(directory);
 
 		return myDirectory;
 	}
@@ -38,7 +33,6 @@ public class DataReader {
 
 	private void readFiles(File[] dataDir){
 
-		ArrayList<String> message = new ArrayList<String>();
 		CSVReader readcsv = new CSVReader();
 		TXTReader readtxt = new TXTReader();
 		
@@ -56,8 +50,6 @@ public class DataReader {
 				counter.mergeChatNamescvs();
 			}
 		}
-
-		//return message;
 	}
 
 }

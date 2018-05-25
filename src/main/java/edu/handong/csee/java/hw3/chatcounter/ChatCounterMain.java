@@ -8,12 +8,19 @@ public class ChatCounterMain {
 		DataReader dataReader = new DataReader();
 		FullArrayCarrier full = new FullArrayCarrier();
 		ChatUserCounter counter = new ChatUserCounter();
+		Runner myRunner = new Runner();
 
+		
+		myRunner.run(args);
+		
 		try {
 			dataReader.getData(args[0]);
 		}catch(ArrayIndexOutOfBoundsException e) {
 			System.out.println("Array index out of bounds exception occured: " + e.getMessage());
 		}
+		
+		
+		//
 		
 		ArrayList<String> mArrayList = full.getStringList();
 		
@@ -21,8 +28,9 @@ public class ChatCounterMain {
             System.out.println("one index " + i + " : value " + mArrayList.get(i));
         }
 		
-
-		counter.Counter();
+		System.out.println(args[1]);
+		counter.counter(args[1]);
+		
 		
 	}
 
