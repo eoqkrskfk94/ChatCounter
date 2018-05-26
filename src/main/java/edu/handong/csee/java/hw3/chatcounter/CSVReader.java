@@ -1,42 +1,50 @@
 package edu.handong.csee.java.hw3.chatcounter;
-import java.io.File;
 import java.io.FileNotFoundException;
+import java.io.IOException;
+import java.io.Reader;
+import java.nio.file.Files;
+import java.nio.file.Paths;
 import java.util.ArrayList;
-import java.util.Scanner;
+import java.util.HashMap;
+
+import org.apache.commons.csv.CSVFormat;
+import org.apache.commons.csv.CSVParser;
+import org.apache.commons.csv.CSVRecord;
 
 public class CSVReader {
-	
+
 	private static ArrayList<String> names = new ArrayList<String>();
-	
-	public void reader(String file) {
-		
-		String fileName = file;
+	private static HashMap<String, String> namesWithTime = new HashMap<String, String>();
+
+
+	public void reader(String file) throws IOException{
 		
 		try {
 			names.clear();
-			Scanner input = new Scanner(new File(fileName));
-			String line = input.nextLine();
-			while(input.hasNextLine()) {
-				line = input.nextLine();
-				
-				String[] array = line.split(",");
-				
-				if(array[1].length() < 20 && array[1].startsWith("\"")) {
-					array[1] = array[1].replaceAll("\"", "");
-					names.add(array[1]);
-				}
-					
+			namesWithTime.clear();
+			Reader reader = Files.newBufferedReader(Paths.get(file));
+			CSVParser csvParser = new CSVParser(reader, CSVFormat.DEFAULT);
+			
+			for (CSVRecord csvRecord : csvParser) {
+				// Accessing Values by Column Index
+				String time = csvRecord.get(0);
+				String name = csvRecord.get(1);
+				namesWithTime.put(name, time);
+				names.add(name + "," + time);
 				
 			}
-			
-		} catch (FileNotFoundException e) {
+		}catch (FileNotFoundException e) {
 			e.printStackTrace();
 		}
-		
-		
 	}
-	
+
+
+
 	public ArrayList<String> getStringList(){
 		return names;
+	}
+	
+	public HashMap<String,String> getHashMap(){
+		return namesWithTime;
 	}
 }

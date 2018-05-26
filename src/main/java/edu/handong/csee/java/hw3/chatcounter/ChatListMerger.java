@@ -1,5 +1,6 @@
 package edu.handong.csee.java.hw3.chatcounter;
 
+
 public class ChatListMerger {
 	CSVReader csv = new CSVReader();
 	TXTReader txt = new TXTReader();
@@ -8,11 +9,11 @@ public class ChatListMerger {
 	
 	
 	public void mergeChatNamestxt() {
-		full_list.getStringList().addAll(txt.getStringList());
+		full_list.getRawStringList().addAll(txt.getStringList());
 	}
 	
 	public void mergeChatNamescvs() {
-		full_list.getStringList().addAll(csv.getStringList());
+		full_list.getRawStringList().addAll(csv.getStringList());
 	}
 	
 	

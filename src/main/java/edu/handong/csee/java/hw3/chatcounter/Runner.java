@@ -9,7 +9,6 @@ import org.apache.commons.cli.Options;
 
 public class Runner {
 
-	String path;
 	boolean help;
 	String inputdir;
 	String outputdir;
@@ -23,10 +22,6 @@ public class Runner {
 				return;
 			}
 
-			// path is required (necessary) data so no need to have a branch.
-			System.out.println("You provided \"" + path + "\" as the value of the option p");
-
-			// TODO show the number of files in the path
 
 			}
 		}
@@ -38,7 +33,6 @@ public class Runner {
 
 			CommandLine cmd = parser.parse(options, args);
 
-			path = cmd.getOptionValue("p");
 			inputdir = cmd.getOptionValue("i");
 			outputdir = cmd.getOptionValue("o");
 			help = cmd.hasOption("h");
@@ -70,14 +64,6 @@ public class Runner {
 				.argName("Directory path output")
 				.required()
 				.build());		
-
-		// add options by using OptionBuilder
-		options.addOption(Option.builder("p").longOpt("path")
-				.desc("Set a path of a directory or a file to display")
-				.hasArg()
-				.argName("Path name to display")
-				.required()
-				.build());
 
 
 		// add options by using OptionBuilder

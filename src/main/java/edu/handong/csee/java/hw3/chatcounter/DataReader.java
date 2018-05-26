@@ -1,5 +1,6 @@
 package edu.handong.csee.java.hw3.chatcounter;
 import java.io.File;
+import java.io.IOException;
 
 public class DataReader {
 	int i = 0;
@@ -25,9 +26,6 @@ public class DataReader {
 
 	private File[] getListOfFilesFromDirectory(File dataDir) {
 
-		for(File file:dataDir.listFiles()) {
-			System.out.println(file.getAbsolutePath());
-		}
 		return dataDir.listFiles();
 	}
 
@@ -39,14 +37,16 @@ public class DataReader {
 		// some logics that read files must be here/
 		for(File file:dataDir) {
 			if(file.toString().endsWith(".txt")) {
-				System.out.println("txtfile: " + file.getName());
 				readtxt.reader(file.getAbsolutePath());
 				counter.mergeChatNamestxt();
 			}
 			
 			if(file.toString().endsWith(".csv")) {
-				System.out.println("csvfile: " + file.getName());
-				readcsv.reader(file.getAbsolutePath());
+				try {
+					readcsv.reader(file.getAbsolutePath());
+				} catch (IOException e) {
+					e.printStackTrace();
+				}
 				counter.mergeChatNamescvs();
 			}
 		}
