@@ -1,18 +1,27 @@
 package edu.handong.csee.java.hw3.chatcounter;
-
-
+/**
+ * 
+ * ChatListMerger class.</br>
+ * 
+ * This class contains the following methods:</br>
+ * 1. mergeChatNamesTxt()</br>
+ * 2. mergeChatNamesCvs()</br>
+ * 
+ * @author mjkim
+ *
+ */
 public class ChatListMerger {
-	CSVReader csv = new CSVReader();
-	TXTReader txt = new TXTReader();
+	CsvReader csv = new CsvReader();
+	TxtReader txt = new TxtReader();
 	FullArrayCarrier full_list = new FullArrayCarrier();
 	int i = 0;
 	
 	
-	public void mergeChatNamestxt() {
+	public void mergeChatNamesTxt() {
 		full_list.getRawStringList().addAll(txt.getStringList());
 	}
 	
-	public void mergeChatNamescvs() {
+	public void mergeChatNamesCvs() {
 		full_list.getRawStringList().addAll(csv.getStringList());
 	}
 	

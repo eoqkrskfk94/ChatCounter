@@ -6,7 +6,19 @@ import org.apache.commons.cli.DefaultParser;
 import org.apache.commons.cli.HelpFormatter;
 import org.apache.commons.cli.Option;
 import org.apache.commons.cli.Options;
-
+/**
+ * 
+ * Runner class</br>
+ * 
+ * This class contains the following methods:</br>
+ * 1. run(String[] args)</br>
+ * 2. parseOptions(Options options, String[] args) </br>
+ * 3. createOptions()</br>
+ * 4. printHelp(Options options)</br> 
+ * 
+ * @author mjkim
+ *
+ */
 public class Runner {
 
 	boolean help;
@@ -77,9 +89,9 @@ public class Runner {
 	private void printHelp(Options options) {
 		// automatically generate the help statement
 		HelpFormatter formatter = new HelpFormatter();
-		String header = "CLI test program";
-		String footer ="\nPlease report issues at https://github.com/lifove/CLIExample/issues";
-		formatter.printHelp("CLIExample", header, options, footer, true);
+		String header = "ChatCounter Program";
+		String footer ="\nPlease report issues at https://github.com/eoqkrskfk94";
+		formatter.printHelp("ChatCounter", header, options, footer, true);
 	}
 
 }

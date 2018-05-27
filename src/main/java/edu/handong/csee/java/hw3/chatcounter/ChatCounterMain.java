@@ -1,7 +1,12 @@
 package edu.handong.csee.java.hw3.chatcounter;
 import java.util.ArrayList;
-
-
+/**
+ * 
+ * This class is the main class for ChatCounter
+ * 
+ * @author mjkim
+ *
+ */
 public class ChatCounterMain {
 
 	public static void main(String[] args) {
@@ -26,7 +31,7 @@ public class ChatCounterMain {
 		ArrayList<String> mArrayList = full.getRawStringList();
 		
 		for(int i = 0; i < mArrayList.size(); i++) {
-            System.out.println("one index " + i + " : value " + mArrayList.get(i));
+            //System.out.println("one index " + i + " : value " + mArrayList.get(i));
         }
 		
 		remover.removeDuplicate(full.getRawStringList());

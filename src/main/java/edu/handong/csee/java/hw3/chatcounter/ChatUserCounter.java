@@ -10,7 +10,19 @@ import java.util.Comparator;
 import java.util.HashMap;
 import java.util.Iterator;
 import java.util.List;
-
+/**
+ * 
+ * ChatUserCounter class</br>
+ * 
+ * This class contains the following methods:</br>
+ * 1. counter()</br>
+ * 2. printMap()</br>
+ * 3. printMapFile()</br>
+ * 4. sortByValue(final Map map)</br>
+ * 
+ * @author mjkim
+ *
+ */
 public class ChatUserCounter {
 
 	FullArrayCarrier full_list = new FullArrayCarrier();

@@ -1,7 +1,20 @@
 package edu.handong.csee.java.hw3.chatcounter;
 import java.io.File;
 import java.io.IOException;
-
+/**
+ * 
+ * DataReader class</br>
+ * 
+ * This class contains the following methods:</br>
+ * 1. getData(String strDir)</br>
+ * 2. getDirectory(String directory)</br>
+ * 3. getListOfFilesFromDirectory(File dataDir) </br>
+ * 4. readFiles(File[] dataDir)</br>
+ *  
+ * 
+ * @author mjkim
+ *
+ */
 public class DataReader {
 	int i = 0;
 	
@@ -31,14 +44,14 @@ public class DataReader {
 
 	private void readFiles(File[] dataDir){
 
-		CSVReader readcsv = new CSVReader();
-		TXTReader readtxt = new TXTReader();
+		CsvReader readcsv = new CsvReader();
+		TxtReader readtxt = new TxtReader();
 		
 		// some logics that read files must be here/
 		for(File file:dataDir) {
 			if(file.toString().endsWith(".txt")) {
 				readtxt.reader(file.getAbsolutePath());
-				counter.mergeChatNamestxt();
+				counter.mergeChatNamesTxt();
 			}
 			
 			if(file.toString().endsWith(".csv")) {
@@ -47,7 +60,7 @@ public class DataReader {
 				} catch (IOException e) {
 					e.printStackTrace();
 				}
-				counter.mergeChatNamescvs();
+				counter.mergeChatNamesCvs();
 			}
 		}
 	}

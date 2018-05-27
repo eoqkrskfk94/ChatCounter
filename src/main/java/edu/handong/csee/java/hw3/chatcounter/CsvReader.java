@@ -13,8 +13,18 @@ import java.util.HashMap;
 import org.apache.commons.csv.CSVFormat;
 import org.apache.commons.csv.CSVParser;
 import org.apache.commons.csv.CSVRecord;
-
-public class CSVReader {
+/**
+ * 
+ * CsvReader class</br>
+ * 
+ * This class contains the following methods:</br>
+ * 1. reader(String file)</br>
+ * 2. getStringList() (getter method)</br>
+ * 
+ * @author mjkim
+ *
+ */
+public class CsvReader {
 
 	private static ArrayList<String> names = new ArrayList<String>();
 	SimpleDateFormat original_timeFormat = new SimpleDateFormat("yyyy-mm-dd HH:mm:ss");

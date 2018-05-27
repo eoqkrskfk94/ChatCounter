@@ -6,8 +6,18 @@ import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.Scanner;
-
-public class TXTReader {
+/**
+ * 
+ * TxtReader class</br>
+ * 
+ * This class contains the following methods:</br>
+ * 1. reader(String file)</br>
+ * 2. getStringList() </br>
+ * 
+ * @author mjkim
+ *
+ */
+public class TxtReader {
 
 	private static ArrayList<String> names = new ArrayList<String>();
 

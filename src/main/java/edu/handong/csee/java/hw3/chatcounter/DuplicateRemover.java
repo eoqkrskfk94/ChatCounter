@@ -3,7 +3,17 @@ package edu.handong.csee.java.hw3.chatcounter;
 import java.util.ArrayList;
 import java.util.LinkedHashSet;
 import java.util.Set;
-
+/**
+ * 
+ * DuplicateRemover class</br>
+ * 
+ * This class contains the following methods:</br>
+ * 1. removeDuplicate(ArrayList<String> input)</br>
+ *
+ *  
+ * @author mjkim
+ *
+ */
 public class DuplicateRemover {
 	
 	int i = 0;
