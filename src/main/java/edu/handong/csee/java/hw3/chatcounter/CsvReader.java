@@ -24,7 +24,8 @@ import org.apache.commons.csv.CSVRecord;
  * @author mjkim
  *
  */
-public class CsvReader {
+
+public class CsvReader implements Merger{
 
 	private static ArrayList<String> names = new ArrayList<String>();
 	SimpleDateFormat original_timeFormat = new SimpleDateFormat("yyyy-mm-dd HH:mm:ss");
@@ -52,8 +53,10 @@ public class CsvReader {
 				String name = csvRecord.get(1);
 				String[] array = csvRecord.get(2).split(" ");
 
-				names.add(name + "," + time + " " + array[0]);
-
+				if(array.length <= 1)
+					names.add(name + "," + time + " " + array[0]);
+				if(array.length > 1)
+					names.add(name + "," + time + " " + array[0] + " " + array[1]);
 			}
 		}catch (FileNotFoundException e) {
 			e.printStackTrace();

@@ -57,6 +57,7 @@ public class TxtReader {
 
 				String[] array = line.split(" ");
 
+
 				if(array[0].startsWith("[") && array[0].endsWith("]")) {
 					String time = array[1] + " " + array[2];
 					Date original_time;
@@ -67,7 +68,6 @@ public class TxtReader {
 
 						new_time = new_timeFormat.format(original_time);
 
-						//System.out.println(new_time);
 
 
 					} catch (ParseException e) {
@@ -77,8 +77,10 @@ public class TxtReader {
 
 
 					array[0] = array[0].replaceAll("[\\[\\]]", "");
-					names.add(array[0] + "," + new_time + " " + array[3]);
-					//System.out.println(names.get(i++));
+					if(array.length <= 4)
+						names.add(array[0] + "," + new_time + " " + array[3]);
+					if(array.length > 5)
+						names.add(array[0] + "," + new_time + " " + array[3] + " " + array[4]);
 				}
 
 

@@ -18,7 +18,8 @@ import java.io.IOException;
 public class DataReader {
 	int i = 0;
 
-	ChatListMerger counter = new ChatListMerger();
+	ChatListCsvMerger counter = new ChatListCsvMerger();
+	ChatListTxtMerger counter2 = new ChatListTxtMerger();
 
 
 	public void getData(String strDir){
@@ -51,7 +52,7 @@ public class DataReader {
 		for(File file:dataDir) {
 			if(file.toString().endsWith(".txt")) {
 				readtxt.reader(file.getAbsolutePath());
-				counter.mergeChatNamesTxt();
+				counter2.mergeChatNames();
 			}
 
 			if(file.toString().endsWith(".csv")) {
@@ -60,7 +61,7 @@ public class DataReader {
 				} catch (IOException e) {
 					e.printStackTrace();
 				}
-				counter.mergeChatNamesCvs();
+				counter.mergeChatNames();
 			}
 		}
 	}
