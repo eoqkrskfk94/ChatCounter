@@ -25,7 +25,7 @@ import org.apache.commons.csv.CSVRecord;
  *
  */
 
-public class CsvReader implements Merger{
+public class CsvReader{
 
 	private static ArrayList<String> names = new ArrayList<String>();
 	SimpleDateFormat original_timeFormat = new SimpleDateFormat("yyyy-mm-dd HH:mm:ss");

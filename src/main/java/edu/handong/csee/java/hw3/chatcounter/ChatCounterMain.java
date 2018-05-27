@@ -31,7 +31,7 @@ public class ChatCounterMain {
 		ArrayList<String> mArrayList = full.getRawStringList();
 
 		for(int i = 0; i < mArrayList.size(); i++) {
-			System.out.println("one index " + i + " : value " + mArrayList.get(i));
+			//System.out.println("one index " + i + " : value " + mArrayList.get(i));
 		}
 
 		remover.removeDuplicate(full.getRawStringList());
