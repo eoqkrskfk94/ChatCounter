@@ -17,7 +17,7 @@ public class TXTReader {
 		SimpleDateFormat new_format = new SimpleDateFormat("yyyy-MM-dd");
 
 		SimpleDateFormat original_timeFormat = new SimpleDateFormat("[a h:m]");
-		SimpleDateFormat new_timeFormat = new SimpleDateFormat("HH:m:ss");
+		SimpleDateFormat new_timeFormat = new SimpleDateFormat("HH:mm");
 		String fileName = file;
 		String new_date = null;
 		String new_time = null;
@@ -39,7 +39,6 @@ public class TXTReader {
 
 						new_date = new_format.format(original_date);
 
-						//System.out.println(new_date);
 
 					} catch (ParseException e) {
 						e.printStackTrace();
@@ -68,7 +67,7 @@ public class TXTReader {
 
 
 					array[0] = array[0].replaceAll("[\\[\\]]", "");
-					names.add(array[0] + "," + new_date + " " + new_time);
+					names.add(array[0] + "," + new_time + " " + array[3]);
 					//System.out.println(names.get(i++));
 				}
 

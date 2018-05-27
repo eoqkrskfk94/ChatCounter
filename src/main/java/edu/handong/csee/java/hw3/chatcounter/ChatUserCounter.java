@@ -13,7 +13,6 @@ import java.util.List;
 
 public class ChatUserCounter {
 
-	static int count = 0;
 	FullArrayCarrier full_list = new FullArrayCarrier();
 	DataReader reader = new DataReader();
 	static PrintWriter output = null;
@@ -35,11 +34,6 @@ public class ChatUserCounter {
 
 	public static void printMap(Map<String, Integer> map){
 
-		for (Map.Entry<String, Integer> entry : map.entrySet()) {
-			System.out.println("Key : " + entry.getKey() + " Value : "
-					+ entry.getValue());
-			count = count + entry.getValue();
-		}
 		
 		Iterator it = sortByValue(map).iterator();
 		
@@ -48,7 +42,6 @@ public class ChatUserCounter {
             System.out.println(temp + " = " + map.get(temp));
         }
 
-		System.out.println(count);
 	}
 
 	public static void printMapFile(Map<String, Integer> map, String strDir){
