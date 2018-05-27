@@ -39,7 +39,7 @@ public class TxtReader {
 			String line = input.nextLine();
 			line = input.nextLine();
 
-			
+
 			while(input.hasNextLine()) {
 				line = input.nextLine();
 
@@ -63,11 +63,11 @@ public class TxtReader {
 					try {
 						array[1] = array[1].replaceAll("[\\[\\]]", "");
 
-							original_time = original_timeFormat.parse(time);
+						original_time = original_timeFormat.parse(time);
 
-							new_time = new_timeFormat.format(original_time);
+						new_time = new_timeFormat.format(original_time);
 
-							//System.out.println(new_time);
+						//System.out.println(new_time);
 
 
 					} catch (ParseException e) {

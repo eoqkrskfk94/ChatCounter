@@ -32,14 +32,14 @@ public class CsvReader {
 
 
 	public void reader(String file) throws IOException{
-		
+
 		Date original_time;
-		
+
 		try {
 			names.clear();
 			Reader reader = Files.newBufferedReader(Paths.get(file));
 			CSVParser csvParser = new CSVParser(reader, CSVFormat.DEFAULT);
-			
+
 			for (CSVRecord csvRecord : csvParser) {
 				// Accessing Values by Column Index
 				String time = csvRecord.get(0);
@@ -48,12 +48,12 @@ public class CsvReader {
 					time = new_timeFormat.format(original_time);
 				} catch (ParseException e) {
 				}
-				
+
 				String name = csvRecord.get(1);
 				String[] array = csvRecord.get(2).split(" ");
 
 				names.add(name + "," + time + " " + array[0]);
-				
+
 			}
 		}catch (FileNotFoundException e) {
 			e.printStackTrace();
@@ -65,5 +65,5 @@ public class CsvReader {
 	public ArrayList<String> getStringList(){
 		return names;
 	}
-	
+
 }

@@ -17,7 +17,7 @@ import java.io.IOException;
  */
 public class DataReader {
 	int i = 0;
-	
+
 	ChatListMerger counter = new ChatListMerger();
 
 
@@ -46,14 +46,14 @@ public class DataReader {
 
 		CsvReader readcsv = new CsvReader();
 		TxtReader readtxt = new TxtReader();
-		
+
 		// some logics that read files must be here/
 		for(File file:dataDir) {
 			if(file.toString().endsWith(".txt")) {
 				readtxt.reader(file.getAbsolutePath());
 				counter.mergeChatNamesTxt();
 			}
-			
+
 			if(file.toString().endsWith(".csv")) {
 				try {
 					readcsv.reader(file.getAbsolutePath());

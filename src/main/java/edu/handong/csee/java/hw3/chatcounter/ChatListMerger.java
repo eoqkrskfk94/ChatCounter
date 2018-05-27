@@ -15,15 +15,15 @@ public class ChatListMerger {
 	TxtReader txt = new TxtReader();
 	FullArrayCarrier full_list = new FullArrayCarrier();
 	int i = 0;
-	
-	
+
+
 	public void mergeChatNamesTxt() {
 		full_list.getRawStringList().addAll(txt.getStringList());
 	}
-	
+
 	public void mergeChatNamesCvs() {
 		full_list.getRawStringList().addAll(csv.getStringList());
 	}
-	
-	
+
+
 }

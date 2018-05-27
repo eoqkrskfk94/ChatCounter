@@ -38,7 +38,7 @@ public class ChatUserCounter {
 			Integer count = map.get(temp);
 			map.put(temp, (count == null) ? 1 : count + 1);
 		}
-		
+
 		map.remove("User");
 		printMap(map);
 		printMapFile(map,myDir);
@@ -46,13 +46,13 @@ public class ChatUserCounter {
 
 	public static void printMap(Map<String, Integer> map){
 
-		
+
 		Iterator it = sortByValue(map).iterator();
-		
+
 		while(it.hasNext()) {
-            String temp = (String) it.next();
-            System.out.println(temp + " = " + map.get(temp));
-        }
+			String temp = (String) it.next();
+			System.out.println(temp + " = " + map.get(temp));
+		}
 
 	}
 
@@ -66,28 +66,28 @@ public class ChatUserCounter {
 
 
 		output.println("Name,Count");
-		
+
 		Iterator it = sortByValue(map).iterator();
-		
+
 		while(it.hasNext()) {
-            String temp = (String) it.next();
-            output.println(temp + "," + map.get(temp));
-        }
+			String temp = (String) it.next();
+			output.println(temp + "," + map.get(temp));
+		}
 
 		output.close();
 	}
 
 	public static List sortByValue(final Map map) {
-		
+
 		List<String> list = new ArrayList();
 		list.addAll(map.keySet());
-		
+
 		Collections.sort(list, new Comparator(){
-			
+
 			public int compare(Object o1, Object o2) {
 				Object v1 = map.get(o1);
 				Object v2 = map.get(o2);
-				
+
 				return ((Comparable)v2).compareTo(v1);
 			}
 		});
