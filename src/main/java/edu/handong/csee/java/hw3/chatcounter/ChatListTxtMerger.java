@@ -3,7 +3,7 @@ package edu.handong.csee.java.hw3.chatcounter;
  * 
  * ChatListTxtMerger class.  (implements interface Merger)</br>
  * 
- * This class contains the following methods:</br>
+ * This class contains the following public methods:</br>
  * 1. mergeChatNames()</br>
  * 
  * @author mjkim

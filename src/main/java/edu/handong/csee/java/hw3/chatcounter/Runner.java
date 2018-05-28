@@ -10,12 +10,11 @@ import org.apache.commons.cli.Options;
  * 
  * Runner class</br>
  * 
- * This class contains the following methods:</br>
- * 1. run(String[] args)</br>
- * 2. parseOptions(Options options, String[] args) </br>
- * 3. createOptions()</br>
- * 4. printHelp(Options options)</br> 
+ * This class contains the following public methods:</br>
+ * 1. run(String[] args)</br> 
  * 
+ *  This class contains the following public members:</br>
+ *  
  * @author mjkim
  *
  */

@@ -17,10 +17,12 @@ import org.apache.commons.csv.CSVRecord;
  * 
  * CsvReader class</br>
  * 
- * This class contains the following methods:</br>
+ * This class contains the following public methods:</br>
  * 1. reader(String file)</br>
  * 2. getStringList() (getter method)</br>
  * 
+ *  This class contains the following public members:</br>
+ *  
  * @author mjkim
  *
  */

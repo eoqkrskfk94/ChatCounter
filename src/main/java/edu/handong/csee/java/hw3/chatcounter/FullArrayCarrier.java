@@ -5,11 +5,12 @@ import java.util.HashMap;
  * 
  * FullArrayCarrier class</br>
  * 
- * This class contains the following methods:</br>
+ * This class contains the following public methods:</br>
  * 1. getStringList()</br>
  * 2. getRawStringList()</br>
  *  
- * 
+ *  This class contains the following public members:</br>
+ *  
  * @author mjkim
  *
  */

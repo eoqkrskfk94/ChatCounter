@@ -5,12 +5,13 @@ import java.io.IOException;
  * 
  * DataReader class</br>
  * 
- * This class contains the following methods:</br>
+ * This class contains the following public methods:</br>
  * 1. getData(String strDir)</br>
  * 2. getDirectory(String directory)</br>
  * 3. getListOfFilesFromDirectory(File dataDir) </br>
  * 4. readFiles(File[] dataDir)</br>
  *  
+ *   This class contains the following public members:</br>
  * 
  * @author mjkim
  *

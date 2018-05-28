@@ -14,11 +14,13 @@ import java.util.List;
  * 
  * ChatUserCounter class</br>
  * 
- * This class contains the following methods:</br>
+ * This class contains the following public methods:</br>
  * 1. counter()</br>
  * 2. printMap()</br>
  * 3. printMapFile()</br>
  * 4. sortByValue(final Map map)</br>
+ * 
+ *  This class contains the following public members:</br>
  * 
  * @author mjkim
  *

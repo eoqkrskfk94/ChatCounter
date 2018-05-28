@@ -10,7 +10,8 @@ import java.util.Set;
  * This class contains the following methods:</br>
  * 1. removeDuplicate(ArrayList<String> input)</br>
  *
- *  
+ *  This class contains the following public members:</br>
+ *   
  * @author mjkim
  *
  */
