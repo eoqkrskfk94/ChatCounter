@@ -73,13 +73,15 @@ public class TxtReader {
 					} catch (ParseException e) {
 						e.printStackTrace();
 					} 
-
-
+					
+					
+					if(array[3].equals("사진"))
+						array[3] = "Photo";
 
 					array[0] = array[0].replaceAll("[\\[\\]]", "");
 					if(array.length <= 4)
 						names.add(array[0] + "," + new_time + " " + array[3]);
-					if(array.length > 5)
+					else
 						names.add(array[0] + "," + new_time + " " + array[3] + " " + array[4]);
 				}
 

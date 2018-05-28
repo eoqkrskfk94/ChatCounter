@@ -30,11 +30,13 @@ public class CsvReader{
 	private static ArrayList<String> names = new ArrayList<String>();
 	SimpleDateFormat original_timeFormat = new SimpleDateFormat("yyyy-mm-dd HH:mm:ss");
 	SimpleDateFormat new_timeFormat = new SimpleDateFormat("HH:mm");
+	SimpleDateFormat new_dateFormat = new SimpleDateFormat("yyyy-MM-dd");
 
 
 	public void reader(String file) throws IOException{
 
 		Date original_time;
+		String date = "";
 
 		try {
 			names.clear();
@@ -46,16 +48,22 @@ public class CsvReader{
 				String time = csvRecord.get(0);
 				try {
 					original_time = original_timeFormat.parse(time);
+					date = new_dateFormat.format(original_time);
 					time = new_timeFormat.format(original_time);
+
+					
 				} catch (ParseException e) {
 				}
 
 				String name = csvRecord.get(1);
 				String[] array = csvRecord.get(2).split(" ");
-
+				
+				if(array[0].equals("사진"))
+					array[0] = "Photo";
+				
 				if(array.length <= 1)
 					names.add(name + "," + time + " " + array[0]);
-				if(array.length > 1)
+				else
 					names.add(name + "," + time + " " + array[0] + " " + array[1]);
 			}
 		}catch (FileNotFoundException e) {

@@ -1,5 +1,4 @@
 package edu.handong.csee.java.hw3.chatcounter;
-import java.util.ArrayList;
 /**
  * 
  * Thus us interface Merger</br>

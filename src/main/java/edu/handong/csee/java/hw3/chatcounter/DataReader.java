@@ -52,6 +52,7 @@ public class DataReader {
 		for(File file:dataDir) {
 			if(file.toString().endsWith(".txt")) {
 				readtxt.reader(file.getAbsolutePath());
+				//test.reader(file.getAbsolutePath());
 				counter2.mergeChatNames();
 			}
 
