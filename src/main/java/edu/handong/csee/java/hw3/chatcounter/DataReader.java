@@ -1,6 +1,8 @@
 package edu.handong.csee.java.hw3.chatcounter;
 import java.io.File;
 import java.io.IOException;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
 /**
  * 
  * DataReader class</br>
@@ -16,20 +18,16 @@ import java.io.IOException;
  * @author mjkim
  *
  */
-public class DataReader {
+public class DataReader { 
 	int i = 0;
 
-	ChatListCsvMerger counter = new ChatListCsvMerger();
-	ChatListTxtMerger counter2 = new ChatListTxtMerger();
-
-
-	public void getData(String strDir){
+	public void getData(String strDir,int numCore){
 
 		File myDir = getDirectory(strDir);
 
 		File[] files = getListOfFilesFromDirectory(myDir);
 
-		readFiles(files);
+		readFiles(files,numCore);
 	}
 
 	private File getDirectory(String directory) {
@@ -44,27 +42,30 @@ public class DataReader {
 		return dataDir.listFiles();
 	}
 
-	private void readFiles(File[] dataDir){
+	private void readFiles(File[] dataDir, int coreNum){
 
-		CsvReader readcsv = new CsvReader();
-		TxtReader readtxt = new TxtReader();
+
+		int numOfCoresInMyCPU = Runtime.getRuntime().availableProcessors();
+		//System.out.println("The number of cores of my system: " + numOfCoresInMyCPU);
+
+		ExecutorService executor = Executors.newFixedThreadPool(numOfCoresInMyCPU);
 
 		// some logics that read files must be here/
 		for(File file:dataDir) {
 			if(file.toString().endsWith(".txt")) {
-				readtxt.reader(file.getAbsolutePath());
-				//test.reader(file.getAbsolutePath());
-				counter2.mergeChatNames();
+				Runnable worker = new TxtReaderThread(file.getAbsolutePath());
+				executor.execute(worker);
 			}
 
 			if(file.toString().endsWith(".csv")) {
-				try {
-					readcsv.reader(file.getAbsolutePath());
-				} catch (IOException e) {
-					e.printStackTrace();
-				}
-				counter.mergeChatNames();
+				Runnable worker = new CsvReaderThread(file.getAbsolutePath());
+				executor.execute(worker);
 			}
+
+		}
+		executor.shutdown();
+
+		while (!executor.isTerminated()) {
 		}
 	}
 

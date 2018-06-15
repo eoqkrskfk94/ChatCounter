@@ -1,4 +1,5 @@
 package edu.handong.csee.java.hw3.chatcounter;
+
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.text.ParseException;
@@ -8,22 +9,28 @@ import java.util.Date;
 import java.util.Scanner;
 /**
  * 
- * TxtReader class</br>
+ * TxtReaderThread class</br>
+ * 
+ * This class implements Runnable</br>
  * 
  * This class contains the following public methods:</br>
- * 1. reader(String file)</br>
- * 2. getStringList() </br>
+ * 1. run()</br>
+ * 2. TxtReaderThread(String file) constructor</br>
  * 
  *  This class contains the following public members:</br>
  *  
  * @author mjkim
  *
  */
-public class TxtReader {
+public class TxtReaderThread implements Runnable {
 
 	private static ArrayList<String> names = new ArrayList<String>();
 
-	public void reader(String file) {
+	String file;
+
+	@Override
+	public void run() {
+		// TODO Auto-generated method stub 
 
 		SimpleDateFormat original_format = new SimpleDateFormat("--------------- yyyy년 M월 d일 E ---------------");
 		SimpleDateFormat new_format = new SimpleDateFormat("yyyy-MM-dd");
@@ -34,6 +41,8 @@ public class TxtReader {
 		String new_date = null;
 		String new_time = null;
 		int i = 0;
+		FullArrayCarrier full_list = new FullArrayCarrier();
+
 
 		try {
 			names.clear();
@@ -75,16 +84,16 @@ public class TxtReader {
 					} catch (ParseException e) {
 						e.printStackTrace();
 					} 
-					
-					
+
+
 					if(array[3].equals("사진"))
 						array[3] = "Photo";
 
 					array[0] = array[0].replaceAll("[\\[\\]]", "");
 					if(array.length <= 4)
-						names.add(array[0] + "," + new_time + " " + array[3]);
+						full_list.getRawStringList().add(array[0] + "," + new_time + " " + array[3]);
 					else
-						names.add(array[0] + "," + new_time + " " + array[3] + " " + array[4]);
+						full_list.getRawStringList().add(array[0] + "," + new_time + " " + array[3] + " " + array[4]);
 				}
 
 
@@ -96,11 +105,15 @@ public class TxtReader {
 			e.printStackTrace();
 		}
 
-
-
 	}
 
-	public ArrayList<String> getStringList() {
-		return names;
+	public TxtReaderThread(String file) {
+		this.file = file;
 	}
+
+
+	public TxtReaderThread() {
+		// TODO Auto-generated constructor stub
+	}
+
 }

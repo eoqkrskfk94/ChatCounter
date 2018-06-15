@@ -53,7 +53,7 @@ public class ChatUserCounter {
 
 		while(it.hasNext()) {
 			String temp = (String) it.next();
-			System.out.println(temp + " = " + map.get(temp));
+			System.out.println(temp + " = " + map.get(temp)); 
 		}
 
 	}

@@ -23,6 +23,7 @@ public class Runner {
 	boolean help;
 	String inputdir;
 	String outputdir;
+	String threadnum;
 
 	public void run(String[] args) {
 		Options options = createOptions();
@@ -47,6 +48,7 @@ public class Runner {
 			inputdir = cmd.getOptionValue("i");
 			outputdir = cmd.getOptionValue("o");
 			help = cmd.hasOption("h");
+			threadnum = cmd.getOptionValue("c");
 
 		} catch (Exception e) {
 			printHelp(options);
@@ -74,7 +76,15 @@ public class Runner {
 				.hasArg()
 				.argName("Directory path output")
 				.required()
-				.build());		
+				.build());	
+		
+		//add options by using Option Builder
+		options.addOption(Option.builder("c").longOpt("threadnum")
+				.desc("Set number of computer cores to use")
+				.hasArg()
+				.argName("threadnumber")
+				.required()
+				.build());	
 
 
 		// add options by using OptionBuilder

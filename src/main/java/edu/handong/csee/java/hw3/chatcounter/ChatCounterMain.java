@@ -16,12 +16,12 @@ public class ChatCounterMain {
 		ChatUserCounter counter = new ChatUserCounter();
 		Runner myRunner = new Runner();
 		DuplicateRemover remover = new DuplicateRemover();
-
+		
 
 		myRunner.run(args);
 
 		try {
-			dataReader.getData(args[1]);
+			dataReader.getData(args[3],Integer.parseInt(args[1])); 
 		}catch(ArrayIndexOutOfBoundsException e) {
 			System.out.println("Array index out of bounds exception occured: " + e.getMessage());
 		}
@@ -37,9 +37,10 @@ public class ChatCounterMain {
 		remover.removeDuplicate(full.getRawStringList());
 
 
-		counter.counter(args[3]);
+		counter.counter(args[5]);
 
 
 	}
+	
 
 }
