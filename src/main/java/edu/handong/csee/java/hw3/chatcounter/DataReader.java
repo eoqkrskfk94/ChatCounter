@@ -17,7 +17,7 @@ import java.util.concurrent.Executors;
  * 
  * @author mjkim
  *
- */
+ */ 
 public class DataReader { 
 	int i = 0;
 
