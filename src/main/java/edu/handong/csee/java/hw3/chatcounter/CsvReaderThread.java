@@ -58,7 +58,7 @@ public class CsvReaderThread implements Runnable {
 					time = new_timeFormat.format(original_time);
 
 
-				} catch (ParseException e) {
+				} catch (ParseException e){
 				}
 
 				String name = csvRecord.get(1);

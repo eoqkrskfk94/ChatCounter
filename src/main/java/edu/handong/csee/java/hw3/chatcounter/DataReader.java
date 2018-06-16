@@ -48,7 +48,7 @@ public class DataReader {
 		int numOfCoresInMyCPU = Runtime.getRuntime().availableProcessors();
 		//System.out.println("The number of cores of my system: " + numOfCoresInMyCPU);
 
-		ExecutorService executor = Executors.newFixedThreadPool(numOfCoresInMyCPU);
+		ExecutorService executor = Executors.newFixedThreadPool(coreNum);
 
 		// some logics that read files must be here/
 		for(File file:dataDir) {
@@ -61,14 +61,12 @@ public class DataReader {
 				Runnable worker = new CsvReaderThread(file.getAbsolutePath());
 				executor.execute(worker);
 			}
-
 		}
 		executor.shutdown();
 
 		while (!executor.isTerminated()) {
 		}
 	}
-
 }
 
 
