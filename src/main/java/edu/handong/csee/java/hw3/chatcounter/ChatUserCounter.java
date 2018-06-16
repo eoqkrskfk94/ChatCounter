@@ -78,7 +78,7 @@ public class ChatUserCounter {
 
 		output.close();
 	}
-
+ 
 	public static List sortByValue(final Map map) {
 
 		List<String> list = new ArrayList();

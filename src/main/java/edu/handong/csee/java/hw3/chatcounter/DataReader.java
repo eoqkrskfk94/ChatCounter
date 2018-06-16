@@ -45,7 +45,7 @@ public class DataReader {
 	private void readFiles(File[] dataDir, int coreNum){
 
 
-		int numOfCoresInMyCPU = Runtime.getRuntime().availableProcessors();
+		//int numOfCoresInMyCPU = Runtime.getRuntime().availableProcessors();
 		//System.out.println("The number of cores of my system: " + numOfCoresInMyCPU);
 
 		ExecutorService executor = Executors.newFixedThreadPool(coreNum);
